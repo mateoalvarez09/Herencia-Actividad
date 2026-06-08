@@ -1,0 +1,36 @@
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+    def mostrar_detalles(self):
+        print(f"Producto: {self.nombre}")
+        print(f"Precio: ${self.precio}")
+
+
+class ProductoAlimenticio(Producto):
+    def aplicar_descuento(self):
+        return self.precio * 0.90
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Precio con descuento: ${self.aplicar_descuento():.2f}")
+
+
+class ProductoElectronico(Producto):
+    def aplicar_descuento(self):
+        return self.precio * 0.85
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Precio con descuento: ${self.aplicar_descuento():.2f}")
+
+
+if __name__ == "__main__":
+    p1 = ProductoAlimenticio("Leche", 2000)
+    p1.mostrar_detalles()
+
+    print()
+
+    p2 = ProductoElectronico("Mouse", 15000)
+    p2.mostrar_detalles()
