@@ -1,0 +1,38 @@
+class Vehiculo:
+    def __init__(self, marca, modelo, anio):
+        self.marca = marca
+        self.modelo = modelo
+        self.anio = anio
+
+    def mostrar_detalles(self):
+        print(f"Marca: {self.marca}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Año: {self.anio}")
+
+
+class Automovil(Vehiculo):
+    def calcular_combustible(self, km):
+        return km / 15
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Combustible para 150 km: {self.calcular_combustible(150):.2f} litros")
+
+
+class Motocicleta(Vehiculo):
+    def calcular_combustible(self, km):
+        return km / 30
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Combustible para 150 km: {self.calcular_combustible(150):.2f} litros")
+
+
+if __name__ == "__main__":
+    a = Automovil("Toyota", "Corolla", 2020)
+    a.mostrar_detalles()
+
+    print()
+
+    m = Motocicleta("Honda", "Wave", 2023)
+    m.mostrar_detalles()
