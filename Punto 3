@@ -1,0 +1,34 @@
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def mostrar_detalles(self):
+        print(f"Nombre: {self.nombre}")
+
+
+class Perro(Animal):
+    def emitir_sonido(self):
+        return "Guau Guau"
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Sonido: {self.emitir_sonido()}")
+
+
+class Gato(Animal):
+    def emitir_sonido(self):
+        return "Miau Miau"
+
+    def mostrar_detalles(self):
+        super().mostrar_detalles()
+        print(f"Sonido: {self.emitir_sonido()}")
+
+
+if __name__ == "__main__":
+    perro = Perro("Titu")
+    perro.mostrar_detalles()
+
+    print()
+
+    gato = Gato("Bart")
+    gato.mostrar_detalles()
