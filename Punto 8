@@ -1,0 +1,23 @@
+class Transporte:
+    def __init__(self, capacidad, velocidad):
+        self.capacidad = capacidad
+        self.velocidad = velocidad
+
+    def calcular_tiempo(self, distancia):
+        return distancia / self.velocidad
+
+
+class Avion(Transporte):
+    pass
+
+
+class Barco(Transporte):
+    pass
+
+
+if __name__ == "__main__":
+    avion = Avion(200, 800)
+    barco = Barco(500, 50)
+
+    print("Tiempo avión:", avion.calcular_tiempo(1600), "horas")
+    print("Tiempo barco:", barco.calcular_tiempo(1600), "horas")
